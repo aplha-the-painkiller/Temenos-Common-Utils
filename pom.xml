@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.kcbgroup.common</groupId>
+	<artifactId>kcb-common-utils</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>KCB Commons Project</name>
+	<description>KCB Commons Project</description>
+
+	<modules>
+		<module>kcb-connector-amq</module>
+		<module>kcb-connector-redis</module>
+	 	<module>kcb-common-models</module>
+	 	<module>kcb-connector-vault-client</module>
+	</modules>
+     <repositories>
+        <repository>
+            <id>KCB_Tech_Delivery_Feed</id>
+            <url>
+                https://pkgs.dev.azure.com/KCB-DEV/21055a96-9411-4b70-b1e9-60184a90cf99/_packaging/KCB_Tech_Delivery_Feed/maven/v1
+            </url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>KCB_Tech_Delivery_Feed</id>
+            <url>
+                https://pkgs.dev.azure.com/KCB-DEV/21055a96-9411-4b70-b1e9-60184a90cf99/_packaging/KCB_Tech_Delivery_Feed/maven/v1
+            </url>
+        </repository>
+    </distributionManagement>
+	
+</project>

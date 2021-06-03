@@ -1,0 +1,26 @@
+# kcb-common-utils pipeline
+resources:
+  repositories:
+    - repository: azure-build-pipeline
+      type: git
+      name: azure-build-pipeline
+
+trigger:
+    - master
+    - release/*
+
+pool:
+  name: 'KCB Tech Delivery Agent Pool'
+
+stages:
+  - stage: BuildCommonLibraries
+    jobs:
+      - template: /jobs/build-deploy-library.yml@azure-build-pipeline
+        parameters:
+          libraries: ['kcb-common-models']
+
+  - stage: BuildDependentLibraries
+    jobs:
+      - template: /jobs/build-deploy-library.yml@azure-build-pipeline
+        parameters:
+          libraries: ['kcb-connector-amq', 'kcb-connector-redis', 'kcb-connector-vault-client']
